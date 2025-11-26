@@ -1,0 +1,108 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Verify adding an item to the cart works correctly.",
+  "subtasks": [
+    {
+      "subtask": "Type standard_user into the username field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 380,
+          "y": 300,
+          "text": "standard_user",
+          "target_hint": "username field",
+          "reason": "To enter the username for logging in."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Type secret_sauce into the password field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 380,
+          "y": 340,
+          "text": "secret_sauce",
+          "target_hint": "password field",
+          "reason": "To enter the password for logging in."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Login button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 400,
+          "text": "",
+          "target_hint": "login button",
+          "reason": "To submit the login credentials and proceed."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Login button clicked, proceeding to next steps."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the first visible Add to cart button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 540,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the first visible item to the cart."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Open the shopping cart page",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 1200,
+          "y": 60,
+          "text": "",
+          "target_hint": "shopping cart icon",
+          "reason": "To open the shopping cart page."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Shopping cart page opened successfully."
+        }
+      ],
+      "status": "done"
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "The cart contains exactly one item",
+      "passed": false
+    },
+    {
+      "assertion": "No UI elements overlap on the screen",
+      "passed": true
+    }
+  ],
+  "status": "fail"
+}

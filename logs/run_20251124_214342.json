@@ -1,0 +1,179 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Verify the addition of an item to the cart",
+  "subtasks": [
+    {
+      "subtask": "Type standard_user into the username field",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 200,
+          "y": 250,
+          "text": "",
+          "reason": "Click on the username field to focus it before typing."
+        },
+        {
+          "action_type": "type",
+          "x": 200,
+          "y": 250,
+          "text": "standard_user",
+          "reason": "Type the username into the focused username field."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Username entered successfully."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Type secret_sauce into the password field",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 200,
+          "y": 300,
+          "text": "",
+          "reason": "Click on the password field to focus it before typing."
+        },
+        {
+          "action_type": "type",
+          "x": 200,
+          "y": 300,
+          "text": "secret_sauce",
+          "reason": "Type the password into the focused password field."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Password entered successfully."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Login button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 200,
+          "y": 400,
+          "text": "",
+          "reason": "Click the Login button to submit credentials."
+        },
+        {
+          "action_type": "click",
+          "x": 200,
+          "y": 400,
+          "text": "",
+          "reason": "Click the Login button to submit credentials."
+        },
+        {
+          "action_type": "type",
+          "x": 200,
+          "y": 300,
+          "text": "standard_user",
+          "reason": "Type the username into the focused username field."
+        },
+        {
+          "action_type": "type",
+          "x": 200,
+          "y": 300,
+          "text": "secret_sauce",
+          "reason": "Type the password into the focused password field."
+        },
+        {
+          "action_type": "click",
+          "x": 200,
+          "y": 400,
+          "text": "",
+          "reason": "Click the Login button to attempt to log in."
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Username field does not accept input; login attempt fails."
+        }
+      ],
+      "status": "error: Username field does not accept input; login attempt fails."
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 200,
+          "y": 300,
+          "text": "locked_out_user",
+          "reason": "Enter a valid username to proceed with the login."
+        },
+        {
+          "action_type": "click",
+          "x": 200,
+          "y": 400,
+          "text": "",
+          "reason": "Click the Login button to attempt to log in with the valid username."
+        },
+        {
+          "action_type": "click",
+          "x": 200,
+          "y": 400,
+          "text": "",
+          "reason": "Click the Login button to proceed after entering the username."
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Username field does not accept input; login attempt fails."
+        }
+      ],
+      "status": "error: Username field does not accept input; login attempt fails."
+    },
+    {
+      "subtask": "Click the first visible Add to cart button",
+      "steps": [
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Cannot proceed as the username field is locked and does not accept input."
+        }
+      ],
+      "status": "error: Cannot proceed as the username field is locked and does not accept input."
+    },
+    {
+      "subtask": "Open the shopping cart page",
+      "steps": [
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Username field is locked; cannot proceed to cart without a valid login."
+        }
+      ],
+      "status": "error: Username field is locked; cannot proceed to cart without a valid login."
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "The cart contains exactly one item",
+      "passed": false
+    },
+    {
+      "assertion": "No UI elements overlap on the screen",
+      "passed": false
+    }
+  ],
+  "status": "fail"
+}

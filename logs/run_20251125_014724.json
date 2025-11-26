@@ -1,0 +1,140 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Verify that items can be added and removed from the cart.",
+  "subtasks": [
+    {
+      "subtask": "Type standard_user into the username field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 250,
+          "y": 200,
+          "text": "standard_user",
+          "target_hint": "username field",
+          "reason": "To input the username for login."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Type secret_sauce into the password field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 250,
+          "y": 250,
+          "text": "secret_sauce",
+          "target_hint": "password field",
+          "reason": "To input the password for login."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Login button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 250,
+          "y": 300,
+          "text": "",
+          "target_hint": "login button",
+          "reason": "To submit the login credentials."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Login process completed successfully."
+        },
+        {
+          "action_type": "click",
+          "x": 1240,
+          "y": 20,
+          "text": "",
+          "target_hint": "shopping cart icon",
+          "reason": "To access the shopping cart after logging in."
+        },
+        {
+          "action_type": "click",
+          "x": 50,
+          "y": 300,
+          "text": "",
+          "target_hint": "Continue Shopping button",
+          "reason": "To proceed with shopping after checking the cart."
+        },
+        {
+          "action_type": "click",
+          "x": 1240,
+          "y": 20,
+          "text": "",
+          "target_hint": "shopping cart icon",
+          "reason": "To access the shopping cart after logging in."
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Login button is not visible in the current viewport."
+        }
+      ],
+      "status": "error: Login button is not visible in the current viewport."
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the first visible Add to cart button",
+      "steps": [
+        {
+          "action_type": "scroll",
+          "x": 0,
+          "y": 0,
+          "text": "300",
+          "target_hint": "viewport",
+          "reason": "To make the Add to cart button visible."
+        },
+        {
+          "action_type": "scroll",
+          "x": 0,
+          "y": 0,
+          "text": "300",
+          "target_hint": "viewport",
+          "reason": "To make the Add to cart button visible."
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "No 'Add to cart' button is visible in the current viewport."
+        }
+      ],
+      "status": "error: No 'Add to cart' button is visible in the current viewport."
+    },
+    {
+      "subtask": "Click the cart icon",
+      "steps": [],
+      "status": "done"
+    },
+    {
+      "subtask": "Wait for the shopping cart page to load",
+      "steps": [],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Remove button",
+      "steps": [],
+      "status": "done"
+    }
+  ],
+  "assertions": [],
+  "status": "fail"
+}

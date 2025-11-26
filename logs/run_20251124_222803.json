@@ -1,0 +1,189 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Verify that a user can log in and add an item to the cart.",
+  "subtasks": [
+    {
+      "subtask": "Type standard_user into the username field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 300,
+          "y": 230,
+          "text": "standard_user",
+          "target_hint": "username field",
+          "reason": "To input the username for logging in."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Username has been successfully typed into the username field."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Type secret_sauce into the password field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 300,
+          "y": 280,
+          "text": "secret_sauce",
+          "target_hint": "password field",
+          "reason": "To input the password for logging in."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Password has been successfully typed into the password field."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Login button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 600,
+          "y": 350,
+          "text": "",
+          "target_hint": "login button",
+          "reason": "To submit the login form and proceed to the next step."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Login button has been successfully clicked and the login process is completed."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "The products page has fully loaded."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the first visible Add to cart button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 900,
+          "y": 450,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the item to the shopping cart."
+        },
+        {
+          "action_type": "click",
+          "x": 900,
+          "y": 520,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the Sauce Labs Bolt T-Shirt to the shopping cart."
+        },
+        {
+          "action_type": "click",
+          "x": 900,
+          "y": 450,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the Sauce Labs Bolt T-Shirt to the shopping cart."
+        },
+        {
+          "action_type": "click",
+          "x": 900,
+          "y": 520,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the Sauce Labs Bolt T-Shirt to the shopping cart."
+        },
+        {
+          "action_type": "click",
+          "x": 900,
+          "y": 520,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the Sauce Labs Bolt T-Shirt to the shopping cart."
+        },
+        {
+          "action_type": "click",
+          "x": 1150,
+          "y": 580,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the Test.allTheThings() T-Shirt (Red) to the shopping cart."
+        },
+        {
+          "action_type": "click",
+          "x": 900,
+          "y": 450,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the Sauce Labs Bolt T-Shirt to the shopping cart."
+        },
+        {
+          "action_type": "click",
+          "x": 900,
+          "y": 450,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the Sauce Labs Bolt T-Shirt to the shopping cart."
+        }
+      ],
+      "status": "timeout"
+    },
+    {
+      "subtask": "Open the shopping cart page",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 1150,
+          "y": 40,
+          "text": "",
+          "target_hint": "shopping cart icon",
+          "reason": "To open the shopping cart page."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Successfully opened the shopping cart page."
+        }
+      ],
+      "status": "done"
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "The cart contains exactly one item",
+      "passed": false
+    },
+    {
+      "assertion": "No UI elements overlap on the screen",
+      "passed": true
+    }
+  ],
+  "status": "fail"
+}

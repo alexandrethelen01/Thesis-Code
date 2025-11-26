@@ -1,0 +1,137 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Verify a user can log in and add an item to the cart.",
+  "subtasks": [
+    {
+      "subtask": "Type standard_user into the username field",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 440,
+          "y": 330,
+          "text": "",
+          "reason": "Click on the username field to focus before typing."
+        },
+        {
+          "action_type": "type",
+          "x": 440,
+          "y": 330,
+          "text": "standard_user",
+          "reason": "Type the username into the focused field."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Finished typing the username into the field."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Type secret_sauce into the password field",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 440,
+          "y": 430,
+          "text": "",
+          "reason": "Click on the password field to focus before typing."
+        },
+        {
+          "action_type": "type",
+          "x": 440,
+          "y": 430,
+          "text": "secret_sauce",
+          "reason": "Type the password into the focused field."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Finished typing the password into the field."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Login button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 440,
+          "y": 480,
+          "text": "",
+          "reason": "Click the Login button to proceed with logging in."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Finished logging in after clicking the Login button."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Finished waiting for the products page to load after logging in."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the first visible Add to cart button",
+      "steps": [
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Add to cart button is not visible on the current page."
+        }
+      ],
+      "status": "error: Add to cart button is not visible on the current page."
+    },
+    {
+      "subtask": "Open the shopping cart page",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 440,
+          "y": 480,
+          "text": "",
+          "reason": "Click the shopping cart icon to open the cart page."
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Cart page cannot be opened from the current view."
+        }
+      ],
+      "status": "error: Cart page cannot be opened from the current view."
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "The cart contains exactly one item",
+      "passed": false
+    },
+    {
+      "assertion": "No UI elements overlap on the screen",
+      "passed": true
+    }
+  ],
+  "status": "fail"
+}

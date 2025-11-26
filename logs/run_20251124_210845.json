@@ -1,0 +1,234 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Verify adding an item to the cart and check for overlaps",
+  "subtasks": [
+    {
+      "subtask": "Open the login page",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 290,
+          "text": "",
+          "reason": "Click on the login button to open the login page."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Login page is open and ready for input."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Enter username standard_user in the username field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 290,
+          "text": "standard_user",
+          "reason": "Entering the username in the username field."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Username has been successfully entered."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Enter password secret_sauce in the password field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 335,
+          "text": "secret_sauce",
+          "reason": "Entering the password in the password field."
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 380,
+          "text": "",
+          "reason": "Clicking the Login button to submit the password."
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "The username is required to proceed."
+        }
+      ],
+      "status": "error: The username is required to proceed."
+    },
+    {
+      "subtask": "Click the login button",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 335,
+          "text": "standard_user",
+          "reason": "Entering a valid username to proceed."
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 335,
+          "text": "",
+          "reason": "Clicking the Username field to enter the username."
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 380,
+          "text": "",
+          "reason": "Clicking the Login button to submit the login information."
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 380,
+          "text": "",
+          "reason": "Clicking the Login button to submit the login information."
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Login button was clicked without a valid password."
+        }
+      ],
+      "status": "error: Login button was clicked without a valid password."
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 335,
+          "text": "standard_user",
+          "reason": "Entering a valid username to proceed"
+        },
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 400,
+          "text": "secret_sauce",
+          "reason": "Entering the password to proceed with login"
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 380,
+          "text": "",
+          "reason": "Clicking the Login button to attempt login"
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Login button was clicked without a valid username."
+        }
+      ],
+      "status": "error: Login button was clicked without a valid username."
+    },
+    {
+      "subtask": "Add the first visible item to the cart",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 335,
+          "text": "standard_user",
+          "reason": "Entering a valid username to proceed"
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 380,
+          "text": "",
+          "reason": "Clicking the Login button to attempt login after entering the username"
+        },
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 380,
+          "text": "secret_sauce",
+          "reason": "Entering the password to log in"
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 380,
+          "text": "",
+          "reason": "Clicking the Login button to proceed with login"
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Login failed due to missing username"
+        }
+      ],
+      "status": "error: Login failed due to missing username"
+    },
+    {
+      "subtask": "Open the cart page",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 340,
+          "text": "standard_user",
+          "reason": "Entering a valid username to proceed with login"
+        },
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 380,
+          "text": "",
+          "reason": "Clicking the Login button to proceed with login"
+        },
+        {
+          "action_type": "type",
+          "x": 640,
+          "y": 400,
+          "text": "secret_sauce",
+          "reason": "Entering the password to proceed with login"
+        },
+        {
+          "action_type": "error",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "reason": "Login failed due to missing username"
+        }
+      ],
+      "status": "error: Login failed due to missing username"
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "The cart contains exactly one item",
+      "passed": false
+    },
+    {
+      "assertion": "No UI elements overlap on the screen",
+      "passed": false
+    }
+  ],
+  "status": "fail"
+}

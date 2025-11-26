@@ -1,0 +1,100 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Verify that a user can log in and add an item to the cart.",
+  "subtasks": [
+    {
+      "subtask": "Type standard_user into the username field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 320,
+          "y": 320,
+          "text": "standard_user",
+          "target_hint": "username field",
+          "reason": "To enter the username for login."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Type secret_sauce into the password field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 320,
+          "y": 360,
+          "text": "secret_sauce",
+          "target_hint": "password field",
+          "reason": "To enter the password for login."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Login button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 640,
+          "y": 480,
+          "text": "",
+          "target_hint": "login button",
+          "reason": "To submit the login credentials."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Login button has been clicked, moving on to the next action."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Products page has loaded successfully."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the first visible Add to cart button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 700,
+          "y": 500,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the selected item to the cart."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Open the shopping cart page",
+      "steps": [],
+      "status": "done"
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "The cart contains exactly one item",
+      "passed": true
+    },
+    {
+      "assertion": "No UI elements overlap on the screen",
+      "passed": false
+    }
+  ],
+  "status": "fail"
+}

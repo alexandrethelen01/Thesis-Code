@@ -1,0 +1,114 @@
+{
+  "url": "https://www.saucedemo.com",
+  "goal": "Test adding and removing an item from the cart.",
+  "subtasks": [
+    {
+      "subtask": "Type standard_user into the username field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 280,
+          "y": 250,
+          "text": "standard_user",
+          "target_hint": "username field",
+          "reason": "To enter the standard_user into the username field."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Type secret_sauce into the password field",
+      "steps": [
+        {
+          "action_type": "type",
+          "x": 280,
+          "y": 295,
+          "text": "secret_sauce",
+          "target_hint": "password field",
+          "reason": "To enter the secret_sauce into the password field."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Login button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 600,
+          "y": 400,
+          "text": "",
+          "target_hint": "login button",
+          "reason": "To submit the login form and proceed to the next step."
+        },
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Successfully logged in, ready to add items to the cart."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Wait for the products page to load",
+      "steps": [
+        {
+          "action_type": "done",
+          "x": 0,
+          "y": 0,
+          "text": "",
+          "target_hint": "",
+          "reason": "Products page has successfully loaded."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the first visible Add to cart button",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 600,
+          "y": 500,
+          "text": "",
+          "target_hint": "add to cart button",
+          "reason": "To add the first visible product to the cart."
+        }
+      ],
+      "status": "done"
+    },
+    {
+      "subtask": "Open the shopping cart page",
+      "steps": [],
+      "status": "done"
+    },
+    {
+      "subtask": "Click the Remove button for the item",
+      "steps": [
+        {
+          "action_type": "click",
+          "x": 600,
+          "y": 400,
+          "text": "",
+          "target_hint": "Remove button",
+          "reason": "To remove the item from the cart."
+        }
+      ],
+      "status": "done"
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "The cart contains exactly zero items",
+      "passed": false
+    },
+    {
+      "assertion": "No UI elements overlap on the screen",
+      "passed": false
+    }
+  ],
+  "status": "fail"
+}
