@@ -131,7 +131,7 @@ class Agent:
                 except Exception:
                     pass
 
-            # 3) Cart-opening subtasks → URL or heading indicates cart/basket/bag/checkout
+            # 3) Cart-opening subtasks → URL or visible cart text indicates cart/basket/bag/checkout
             if any(
                 k in s
                 for k in [
@@ -147,6 +147,7 @@ class Agent:
                     "open bag",
                 ]
             ):
+                # 3a) URL-based detection
                 try:
                     url = page.url or ""
                     if cart_like_pattern.search(url):
@@ -155,11 +156,38 @@ class Agent:
                 except Exception:
                     pass
 
+                # 3b) Heading-based detection (if sites use semantic headings)
                 try:
                     headings = page.get_by_role("heading", name=cart_like_pattern)
                     if headings.count() > 0 and headings.first.is_visible():
                         print("[AGENT] Subtask satisfied: heading indicates cart/basket/bag/checkout view")
                         return True
+                except Exception:
+                    pass
+
+                # 3c) Generic text-based detection (handles spans/divs like "YOUR CART")
+                try:
+                    cart_heading_pattern = re.compile(
+                        r"\b(your cart|shopping cart|cart summary|cart overview|your basket|shopping basket)\b",
+                        re.I,
+                    )
+                    cart_text = page.get_by_text(cart_heading_pattern)
+                    try:
+                        text_count = cart_text.count()
+                    except Exception:
+                        text_count = 0
+
+                    if text_count > 0:
+                        for i in range(min(text_count, 3)):
+                            try:
+                                if cart_text.nth(i).is_visible():
+                                    print(
+                                        "[AGENT] Subtask satisfied: visible text indicates cart/basket page "
+                                        "(e.g. 'Your Cart' or 'Shopping Cart')"
+                                    )
+                                    return True
+                            except Exception:
+                                continue
                 except Exception:
                     pass
 
@@ -356,8 +384,7 @@ class Agent:
                     "shopping cart page",
                 ]
             ):
-                # Match accessible names that START with cart-like words, so
-                # "Cart" or "Shopping cart" match, but "Add to cart" does NOT.
+                # 4a) Accessible-name based (avoids "Add to cart")
                 pattern_cart_icon = re.compile(
                     r"^(cart|shopping cart|basket|bag|trolley|checkout)\b",
                     re.I,
@@ -376,6 +403,35 @@ class Agent:
                     return True
                 except Exception:
                     pass
+
+                # 4b) Generic DOM-based cart icon selectors (anchor elements only),
+                #     so we don't accidentally click "Add to cart" buttons.
+                try:
+                    cart_selectors = [
+                        "a[href*='cart']",
+                        "a[class*='shopping_cart']",
+                        "a[class*='shopping-cart']",
+                        "a[class*='cart_link']",
+                        "a[class*='cart-link']",
+                        "a[aria-label*='cart']",
+                        "a[data-test*='cart']",
+                        "a[id*='cart']",
+                    ]
+                    for sel in cart_selectors:
+                        try:
+                            loc = page.locator(sel)
+                            try:
+                                c = loc.count()
+                            except Exception:
+                                c = 0
+                            if c > 0:
+                                loc.first.click()
+                                print(f"[AGENT] Clicked cart-like icon via selector {sel!r}")
+                                return True
+                        except Exception:
+                            continue
+                except Exception as e:
+                    print(f"[AGENT] cart icon DOM selector error: {e}")
 
             # 5) Generic "submit" / "continue" / "next" buttons
             if any(k in hint_l for k in ["submit", "continue", "next"]):
